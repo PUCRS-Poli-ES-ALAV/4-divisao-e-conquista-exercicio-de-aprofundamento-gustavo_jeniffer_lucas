@@ -1,4 +1,8 @@
+count = 0
+
 def mergeSort(arr):
+    global count
+    count += 1
     if len(arr) <= 1:
         return arr
     corte = (len(arr)//2)
@@ -13,9 +17,11 @@ def mergeSort(arr):
             result.append(max.pop(0))
     return result + min + max
 
-print(mergeSort([2,6,3,12,65,23,54,12,321,2]))
+print(mergeSort([2,6,3,12,65,23,54,12,321,2]), count)
 
 def MULTIPLY(x, y, n): 
+    global count
+    count += 1
     if (n == 1):
         return x * y
 
@@ -32,7 +38,10 @@ def MULTIPLY(x, y, n):
 
     return (2 ** (2 * m) * e) + (2 ** m * (g + h)) + f
 
+count = 0
 # teste-o para os 3 casos de valores inteiros: com 4 bits, com 16 bits e com 64 bits. Nestes testes, contabilize o número de iterações que o algoritmo executa, e o tempo gasto.
-print(MULTIPLY(15, 15, 4))
-print(MULTIPLY(65535, 65535, 16))
-print(MULTIPLY(18446744073709551615, 18446744073709551615, 64))
+print(MULTIPLY(15, 15, 4), count)
+count = 0
+print(MULTIPLY(65535, 65535, 16), count)
+count = 0
+print(MULTIPLY(18446744073709551615, 18446744073709551615, 64), count)
